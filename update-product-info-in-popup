@@ -1,1 +1,18 @@
+document.getElementById('copy-btn').addEventListener('click', function() {
+  // Копируем название товара
+  var getProductName = document.querySelector('.get-product-name').textContent.trim();
+  document.querySelector('.put-product-name').value = getProductName;
+
+  // Копируем стоимость товара (целое число)
+  var getProductCost = parseInt(document.querySelector('.get-product-cost').textContent, 10) || 0;
+  document.querySelector('.put-product-cost').value = getProductCost;
+
+  // Копируем количество товара
+  var getProductCount = document.querySelector('.get-product-count').textContent.trim();
+  document.querySelector('.put-product-count').value = getProductCount;
+
+  // Вычисляем и записываем общую стоимость (целое число)
+  var totalCost = (parseInt(getProductCount, 10) || 0) * getProductCost;
+  document.querySelector('.total-cost').value = totalCost;
+});
 
