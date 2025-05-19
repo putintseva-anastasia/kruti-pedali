@@ -1,4 +1,4 @@
-document.getElementById('copy-btn').addEventListener('click', function() {
+document.getElementById('order-btn').addEventListener('click', function() {
   // Копируем название товара
   var getProductName = document.querySelector('.get-product-name').textContent.trim();
   document.querySelector('.put-product-name').value = getProductName;
