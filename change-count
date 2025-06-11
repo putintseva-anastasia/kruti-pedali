@@ -1,17 +1,23 @@
-const countElement = document.querySelector('.get-product-count');
-const increaseButton = document.querySelector('.increase-by-one');
-const decreaseButton = document.querySelector('.decrease-by-one');
+<script>
+  // изменение количества товара к заказу
+  const countElement = document.querySelector('.get-product-count');
+  const increaseButton = document.querySelector('.increase-by-one');
+  const decreaseButton = document.querySelector('.decrease-by-one');
 
-increaseButton.addEventListener('click', function() {
-  let count = parseInt(countElement.textContent, 10) || 1;
-  count += 1;
-  countElement.textContent = count;
-});
+  // увеличение количества на 1
+  increaseButton.addEventListener('click', function() {
+    let count = parseInt(countElement.textContent, 10) || 1;
+    count += 1;
+    countElement.textContent = count;
+  });
 
-decreaseButton.addEventListener('click', function() {
-  let count = parseInt(countElement.textContent, 10) || 1;
-  if (count > 1) {
-  count -= 1;
-  }
-  countElement.textContent = count;
-});
+  // уменьшение количества на 1
+  decreaseButton.addEventListener('click', function() {
+    let count = parseInt(countElement.textContent, 10) || 1;
+    // проверка - количсетво товара всегда должено быть > 1
+    if (count > 1) { 
+    count -= 1;
+    }
+    countElement.textContent = count;
+  });
+</script>
