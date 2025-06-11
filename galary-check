@@ -1,0 +1,21 @@
+// Проверка наличия картинки в базе данных для заполнения галереи на странице товара
+var sliderList = document.querySelector('.slider__list');
+var Slides = sliderList.childNodes;
+
+var thumbsListParent = document.querySelector('.slider__thumbs-list');
+let index = 0;
+var node;
+
+Slides.forEach(function(slide) {
+  // Проверяем, что это элемент (узел типа 1)
+  if (slide.nodeType === 1) {
+    var img = slide.querySelector('img');
+    if (img && (!img.getAttribute('src') || img.getAttribute('src').trim() === '')) {
+      // Если src пустой — скрываем слайд + скрываем превью для него
+      slide.style.display = 'none';
+      node = thumbsListParent.childNodes[index];
+      node.style.display = 'none';
+    }
+  }
+  index++;
+});
