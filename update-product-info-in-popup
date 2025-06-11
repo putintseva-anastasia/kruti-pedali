@@ -1,20 +1,21 @@
-// Обновление информации о товаре к заказу в попапе
-document.getElementById('iek35fs8p_0').addEventListener('click', function() {
-  // Копируем название товара
-  var getProductName = document.querySelector('.get-product-name').textContent.trim();
-  document.querySelector('.put-product-name').value = getProductName;
-
-  // Копируем стоимость товара (целое число)
-  var getProductCost = document.querySelector('.get-product-cost').textContent.trim();
-  document.querySelector('.put-product-cost').value = getProductCost + " ₽";
-
-  // Копируем количество товара
-  var getProductCount = document.querySelector('.get-product-count').textContent.trim();
-  document.querySelector('.put-product-count').value = getProductCount;
-
-  // Вычисляем и записываем общую стоимость (целое число)
-  var cost = getProductCost.replace(/\s+/g, "");
-  var totalCost = (parseInt(getProductCount, 10) || 0) * parseInt(cost, 10);
-  document.querySelector('.total-cost').value = Intl.NumberFormat('ru-RU').format(totalCost) + " ₽";
-});
-
+<script>
+  // Обновление информации о товаре к заказу в попапе
+  document.getElementById('iek35fs8p_0').addEventListener('click', function() {
+    // Копируем название товара
+    var getProductName = document.querySelector('.get-product-name').textContent.trim();
+    document.querySelector('.put-product-name').value = getProductName;
+  
+    // Копируем стоимость товара (целое число)
+    var getProductCost = document.querySelector('.get-product-cost').textContent.trim();
+    document.querySelector('.put-product-cost').value = getProductCost + " ₽";
+  
+    // Копируем количество товара
+    var getProductCount = document.querySelector('.get-product-count').textContent.trim();
+    document.querySelector('.put-product-count').value = getProductCount;
+  
+    // Вычисляем и записываем общую стоимость (целое число)
+    var cost = getProductCost.replace(/\s+/g, "");
+    var totalCost = (parseInt(getProductCount, 10) || 0) * parseInt(cost, 10);
+    document.querySelector('.total-cost').value = Intl.NumberFormat('ru-RU').format(totalCost) + " ₽";
+  });
+</script>
