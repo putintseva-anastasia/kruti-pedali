@@ -1,0 +1,31 @@
+<style>
+  .slider-custom::-webkit-scrollbar {
+    display: none; /* Скрываем скроллбар в Chrome и Safari */
+  }
+  .slider-custom {
+    scrollbar-width: none; /* Скрываем скроллбар в Firefox */
+    -ms-overflow-style: none; /* Скрываем скроллбар в IE и Edge */
+  }
+</style>
+
+<script>
+  const productContainer = document.querySelector('.slider-custom'); // Контейнер слайдера
+  const products = document.querySelectorAll('.slider-custom__item');
+  var productWidth = (products[0].offsetWidth + 10) / 2; // Половина ширина карточки включая отступы
+    
+  document.querySelector('.next').addEventListener('click', () => {
+      // Настройка скрола вправо
+      productContainer.scrollBy({ 
+        left: productWidth, // смещение на значение productWidth
+        behavior: 'smooth', // плавный скролл
+          
+      });
+  });
+  document.querySelector('.prev').addEventListener('click', () => {
+      productContainer.scrollBy({ 
+        left: -productWidth, 
+        behavior: 'smooth', 
+          
+      });
+  });
+</script>
