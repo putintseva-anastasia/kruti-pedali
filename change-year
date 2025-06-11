@@ -1,4 +1,5 @@
 <script>
+  // автоматическое изменение года в копирайте в футере
   document.addEventListener("DOMContentLoaded", () => {
     const currentYear = new Date().getFullYear();
     const currentYearElements = document.querySelectorAll('[data-current-year]');
